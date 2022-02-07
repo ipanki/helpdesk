@@ -3,11 +3,11 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
 
-from .models import Issue
-from .permissions import IssuePermission
-from .serializers import (CreateIssueSerializer, CreateMessageSerializer,
-                          IssueSerializer, MessageSerializer)
-from .tasks import pause_issue, reopen_issue, resolve_issue
+from issues.models import Issue
+from issues.permissions import IssuePermission
+from issues.serializers import (CreateIssueSerializer, CreateMessageSerializer,
+                                IssueSerializer, MessageSerializer)
+from issues.tasks import pause_issue, reopen_issue, resolve_issue
 
 
 class IssueViewSet(ViewSet):

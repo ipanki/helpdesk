@@ -1,6 +1,6 @@
 from celery import shared_task
 
-from .models import Issue
+from issues.models import Issue
 
 
 @shared_task
