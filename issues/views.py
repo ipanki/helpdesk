@@ -57,7 +57,7 @@ class IssueViewSet(ViewSet):
             task = pause_issue.delay(issue.id)
             task.wait()
         except Exception as e:
-            return Response(status=status.HTTP_400_BAD_REQUEST_NOT_FOUND, data=str(e))
+            return Response(status=status.HTTP_400_BAD_REQUEST, data=str(e))
 
         issue.refresh_from_db()
         data = IssueSerializer(issue).data
